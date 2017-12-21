@@ -1,0 +1,8 @@
+{
+    "name": "LadyHeroBot",
+    "version": "1.0.0",
+    "description": "Discord Bot for Lady_Hero",
+    "main": "bot.js",
+    "author": "StrykeBack",
+    "dependencies": {}
+}
