@@ -1,8 +1,11 @@
 {
-    "name": "LadyHeroBot",
+    "name": "ladyherobot",
     "version": "1.0.0",
     "description": "Discord Bot for Lady_Hero",
     "main": "bot.js",
     "author": "StrykeBack",
-    "dependencies": {}
+    "dependencies": {
+        "discord.io": "^2.5.3",
+        "winston": "^2.4.0"
+    }
 }
