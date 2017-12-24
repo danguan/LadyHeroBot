@@ -11,8 +11,8 @@ client.on('message', message => {
     var prefix = "sticker!";
     var msg = message.content;
 
-    if (msg.content.substring(0, 8) === prefix) {
-        var suffix = msg.content.substring(8);
+    if (msg.substring(0, 8) === prefix) {
+        var suffix = msg.substring(8);
 
         if (images.hasOwnProperty(suffix)) {
             msg = new Discord.Attachment(images[suffix]);
