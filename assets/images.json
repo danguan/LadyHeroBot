@@ -1,7 +1,7 @@
 {
-    "carry": "./assets/carry.png",
-    "cheese": "./assets/cheese.png",
-    "moreroll": "./assets/moreroll.png",
-    "noctis": "./assets/noctis.png",
-    "rainbowplease": "./assets/rainbowplease.png"
+    "carry": "carry.png",
+    "cheese": "cheese.png",
+    "moreroll": "moreroll.png",
+    "noctis": "noctis.png",
+    "rainbowplease": "rainbowplease.png"
 }
