@@ -27,7 +27,7 @@ client.on('message', message => {
             for (var stickerName in images) {
                 helpMsg += stickerName + ", ";
             }
-            helpMsg = helpMsg.substring(0, helpMsg.length() - 2);
+            helpMsg = helpMsg.substring(0, helpMsg.length - 2);
 
             message.channel.send(helpMsg);
         }
