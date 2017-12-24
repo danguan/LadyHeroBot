@@ -15,10 +15,9 @@ client.on('message', message => {
         var suffix = msg.substring(8);
 
         if (images.hasOwnProperty(suffix)) {
-            msg = new Discord.Attachment(images[suffix]);
+            message.channel.send(new Discord.Attachment(images[suffix]));
         }
     }
-    message.channel.send(msg);
 });
 
 client.login(auth.token);
