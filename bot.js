@@ -20,8 +20,8 @@ client.on('message', message => {
 
             message.channel.send(sticker);
         } else if (suffix === "help") {
-            var helpMsg = "sticker![sticker]  →  Posts a sticker to the channel\n" + 
-            "Type sticker!help to get a list of all available stickers\n" +
+            var helpMsg = "sticker![sticker]  →  Posts a sticker to the channel\n\n" + 
+            "Type sticker!help to get a list of all available stickers\n\n" +
             "Available stickers:\n";
 
             for (var stickerName in images) {
