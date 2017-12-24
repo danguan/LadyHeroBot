@@ -11,7 +11,7 @@ client.on('message', message => {
     var prefix = "sticker!";
     var msg = message.content;
 
-    if (msg.substring(0, 8) === prefix) {
+    if (msg.substring(0, 8).toLowerCase() === prefix) {
         var suffix = msg.substring(8);
 
         if (images.hasOwnProperty(suffix)) {
