@@ -30,6 +30,8 @@ client.on('message', message => {
             helpMsg = helpMsg.substring(0, helpMsg.length - 2);
 
             message.channel.send(helpMsg);
+        } else {
+            message.channel.send(msg);
         }
     }
 });
