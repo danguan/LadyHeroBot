@@ -3,9 +3,9 @@ Discord bot for Lady_Hero's Discord channel, used for testing Final Fantasy Brav
 
 Invite URL: https://discord.gg/ahVvx6r
 
-###### Current Functionality
+##### Current Functionality
 
-####### Stickers
+###### Stickers
 Commands:
 sticker![sticker]  →  Posts a sticker to the channel
 sticker!help  →  get a list of all available stickers
