@@ -1,13 +1,14 @@
 {
-    "carry": "minfilia 150.png",
-    "carrybig": "minfiliabig.png",
-    "cheese": "rikku 150.png",
-    "cheesebig": "rikkubig.png",
-    "moreroll": "setzer 150.png",
-    "morerollbig": "setzerbig.png",
-    "noctis": "noctis 150.png",
-    "noctisbig": "noctisbig.png",
-    "rainbowplease": "yshtola 150.png",
-    "rainbowpleasebig": "yshtolabig.png"
-
+  "bye": "nyx 150.png",
+  "carry": "minfilia 150.png",
+  "cheese": "rikku 150.png",
+  "carrybig": "minfiliabig.png",
+  "cheesebig": "rikkubig.png",
+  "moreroll": "setzer 150.png",
+  "morerollbig": "setzerbig.png",
+  "noctis": "noctis 150.png",
+  "noctisbig": "noctisbig.png",
+  "rainbowplease": "yshtola 150.png",
+  "rainbowpleasebig": "yshtolabig.png",
+  "scream": "celes 150.png"
 }
