@@ -11,6 +11,7 @@ Commands:
 * sticker!help  →  get a list of all available stickers
 
 Available stickers:
+* angry
 * bye
 * carry
 * carrybig
