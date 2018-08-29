@@ -16,15 +16,15 @@ client.on('message', message => {
     if (msg.substring(0, 8).toLowerCase() === prefix) {
       var suffix = msg.substring(8);
   
-      if (images.hasOwnProperty(suffix)) {
+      if (images.hasOwnProperty(suffix.toLowerCase())) {
         var stickerPath = './assets/' + images[suffix];
         var sticker = new Discord.Attachment(stickerPath);
   
         message.channel.send(sticker);
       } else if (suffix === 'help') {
         var helpMsg =
-          'sticker![sticker]  →  Posts a sticker to the channel\n\n' +
-          'Type sticker!help to get a list of all available stickers\n\n' +
+          'Sticker![sticker] or sticker![sticker]  →  Posts a sticker to the channel (case insensitive)\n\n' +
+          'Type Sticker!help to get a list of all available stickers\n\n' +
           'Available stickers:\n';
   
         for (var stickerName in images) {

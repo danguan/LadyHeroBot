@@ -2,6 +2,7 @@
   "angry": "angry_lightning_noises 150.png",
   "bye": "nyx 150.png",
   "carry": "minfilia 150.png",
+  "celeshey": "celes 150.png",
   "cheese": "rikku 150.png",
   "carrybig": "minfiliabig.png",
   "cheesebig": "rikkubig.png",
@@ -9,7 +10,9 @@
   "morerollbig": "setzerbig.png",
   "noctis": "noctis 150.png",
   "noctisbig": "noctisbig.png",
+  "noisesintensifies": "angry_lightning_noises.gif",
+  "qtlaughs": "camille 150.png",
   "rainbowplease": "yshtola 150.png",
   "rainbowpleasebig": "yshtolabig.png",
-  "scream": "celes 150.png"
+  "scream": "opera celes 150.png"
 }
