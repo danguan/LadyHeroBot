@@ -14,9 +14,9 @@ client.on('message', message => {
     var msg = message.content;
   
     if (msg.substring(0, 8).toLowerCase() === prefix) {
-      var suffix = msg.substring(8);
+      var suffix = msg.substring(8).toLowerCase();
   
-      if (images.hasOwnProperty(suffix.toLowerCase())) {
+      if (images.hasOwnProperty(suffix)) {
         var stickerPath = './assets/' + images[suffix];
         var sticker = new Discord.Attachment(stickerPath);
   
