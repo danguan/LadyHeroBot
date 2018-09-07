@@ -18,8 +18,8 @@ Available stickers:
 * celeshey
 * cheese
 * cheesebig
+* fliphat
 * ladylaughs
-* medius
 * moreroll
 * morerollbig
 * noctis
