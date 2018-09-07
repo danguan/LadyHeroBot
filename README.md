@@ -19,11 +19,14 @@ Available stickers:
 * cheese
 * cheesebig
 * ladylaughs
+* medius
 * moreroll
 * morerollbig
 * noctis
 * noctisbig
 * noisesintensifies
+* ohohoho
+* oliveok
 * qtlaughs
 * rainbowplease
 * rainbowpleasebig
