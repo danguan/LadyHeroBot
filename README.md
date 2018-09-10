@@ -16,30 +16,6 @@ Commands (All commands are case-insensitive):
 - sticker!help → Get a list of all available stickers
 
 Available stickers:
-<<<<<<< Updated upstream
-* a2rage
-* angry
-* bye
-* carry
-* carrybig
-* celeshey
-* cheese
-* cheesebig
-* fliphat
-* hyousalt
-* ladylaughs
-* moreroll
-* morerollbig
-* noctis
-* noctisbig
-* noisesintensifies
-* ohohoho
-* oliveok
-* qtlaughs
-* rainbowplease
-* rainbowpleasebig
-* scream
-=======
 
 - a2rage
 - angry
@@ -63,7 +39,6 @@ Available stickers:
 - rainbowplease
 - rainbowpleasebig
 - scream
->>>>>>> Stashed changes
 
 Example Usage:
 
