@@ -11,6 +11,7 @@ Commands (All commands are case-insensitive):
 * sticker!help  →  Get a list of all available stickers
 
 Available stickers:
+* a2rage
 * angry
 * bye
 * carry
@@ -19,6 +20,7 @@ Available stickers:
 * cheese
 * cheesebig
 * fliphat
+* hyousalt
 * ladylaughs
 * moreroll
 * morerollbig
