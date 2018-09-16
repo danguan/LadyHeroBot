@@ -39,6 +39,7 @@ Available stickers:
 - rainbowplease
 - rainbowpleasebig
 - scream
+- sob
 
 Example Usage:
 
