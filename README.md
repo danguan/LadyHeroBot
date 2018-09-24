@@ -19,20 +19,24 @@ Available stickers:
 
 - a2rage
 - angry
+- ayaka
 - bye
 - carry
 - carrybig
 - celeshey
 - cheese
 - cheesebig
+- eiko
 - fliphat
 - hyousalt
 - ladylaughs
 - moreroll
 - morerollbig
 - noctis
+- noctisrush
 - noctisbig
 - noisesintensifies
+- nyxdice
 - ohohoho
 - oliveok
 - qtlaughs
