@@ -5,7 +5,7 @@
     "main": "bot.js",
     "author": "StrykeBack",
     "dependencies": {
-        "discord.js": "^11.2.1",
+        "discord.js": "^11.4.2",
         "winston": "^2.4.0"
     }
 }
