@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var auth = require('./auth.json');
-var images = require('./assets/images.json');
-var { handleSticker } = require('./services/sticker.js');
+const auth = require('./auth.json');
+const images = require('./assets/images.json');
+const { handleSticker } = require('./services/sticker.js');
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);

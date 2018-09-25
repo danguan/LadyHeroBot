@@ -1,4 +1,4 @@
-export default handleSticker = (msg) => {
+function handleSticker(msg) {
   var suffix = msg.substring(8).toLowerCase();
 
   if (images.hasOwnProperty(suffix)) {
@@ -20,3 +20,7 @@ export default handleSticker = (msg) => {
     message.channel.send(helpMsg);
   }
 }
+
+module.exports = {
+  handleSticker
+} 
