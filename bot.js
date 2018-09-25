@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const auth = require('./auth.json');
-const images = require('./assets/images.json');
 const { handleSticker } = require('./services/sticker.js');
 
 client.on('ready', () => {

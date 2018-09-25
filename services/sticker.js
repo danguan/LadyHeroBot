@@ -1,3 +1,5 @@
+const images = require('./assets/images.json');
+
 function handleSticker(msg) {
   var suffix = msg.substring(8).toLowerCase();
 
@@ -23,4 +25,4 @@ function handleSticker(msg) {
 
 module.exports = {
   handleSticker
-} 
+};
