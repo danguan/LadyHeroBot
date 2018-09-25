@@ -12,7 +12,8 @@ client.on('message', message => {
     var msg = message.content;
 
     if (msg.substring(0, 8).toLowerCase() === 'sticker!') {
-      handleSticker(msg);
+      let stickerMsg = handleSticker(message);
+      message.channel.send(stickerMsg);
     }
   }
 });

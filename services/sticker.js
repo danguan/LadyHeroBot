@@ -1,4 +1,4 @@
-const images = require('./assets/images.json');
+const images = require('../assets/images.json');
 
 function handleSticker(msg) {
   var suffix = msg.substring(8).toLowerCase();
@@ -7,7 +7,7 @@ function handleSticker(msg) {
     var stickerPath = '../assets/' + images[suffix];
     var sticker = new Discord.Attachment(stickerPath);
 
-    message.channel.send(sticker);
+    return sticker;
   } else if (suffix === 'help') {
     var helpMsg =
       'Sticker![sticker] or sticker![sticker]  →  Posts a sticker to the channel (case insensitive)\n\n' +
@@ -19,7 +19,7 @@ function handleSticker(msg) {
     }
     helpMsg = helpMsg.substring(0, helpMsg.length - 2);
 
-    message.channel.send(helpMsg);
+    return helpMsg;
   }
 }
 
