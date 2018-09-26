@@ -1,0 +1,11 @@
+{
+  "age": {
+    "over18": "Over 18",
+    "under18": "Under 18"
+  },
+  "gender": {
+    "he": "He/Him",
+    "she": "She/Her",
+    "they": "They/Them"
+  }
+}
