@@ -12,12 +12,17 @@ client.on('message', message => {
   if (!message.author.equals(client.user)) {
     const msg = message.content;
     const member = message.member;
-    const prefix = msg.substring(0, msg.indexOf('!'));
+    const prefix = msg.substring(0, msg.indexOf('!')).toLowerCase();
     const suffix = msg.substring(msg.indexOf('!') + 1).toLowerCase();
 
     if (prefix === 'sticker') {
-      let stickerMsg = handleSticker(suffix);
-      message.channel.send(stickerMsg);
+      handleSticker(suffix)
+        .then(stickerMsg => {
+          message.channel.send(stickerMsg);
+        })
+        .catch(() => {
+          console.error('Invalid sticker specified');
+        });
     } else if (prefix === 'role') {
       handleRole(suffix, member, message.guild.roles)
         .then(roleMsg => {
