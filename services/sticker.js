@@ -1,8 +1,6 @@
 const images = require('../assets/images.json');
 
-function handleSticker(msg) {
-  var suffix = msg.substring(8).toLowerCase();
-
+function handleSticker(suffix) {
   if (images.hasOwnProperty(suffix)) {
     var stickerPath = '../assets/' + images[suffix];
     var sticker = new Discord.Attachment(stickerPath);
