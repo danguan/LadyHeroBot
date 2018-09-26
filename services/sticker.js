@@ -1,9 +1,10 @@
+const Discord = require('discord.js');
 const images = require('../assets/images.json');
 
 function handleSticker(suffix) {
   if (images.hasOwnProperty(suffix)) {
-    var stickerPath = '../assets/' + images[suffix];
-    var sticker = new Discord.Attachment(stickerPath);
+    const stickerPath = './assets/' + images[suffix];
+    const sticker = new Discord.Attachment(stickerPath);
 
     return sticker;
   } else if (suffix === 'help') {
@@ -12,7 +13,7 @@ function handleSticker(suffix) {
       'Type Sticker!help to get a list of all available stickers\n\n' +
       'Available stickers:\n';
 
-    for (var stickerName in images) {
+    for (let stickerName in images) {
       helpMsg += stickerName + ', ';
     }
     helpMsg = helpMsg.substring(0, helpMsg.length - 2);
