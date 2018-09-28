@@ -42,6 +42,7 @@ Available stickers:
 - qtlaughs
 - rainbowplease
 - rainbowpleasebig
+- rainbro
 - ramzatoot
 - scream
 - sob
