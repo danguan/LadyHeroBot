@@ -28,7 +28,9 @@ Available stickers:
 - cheesebig
 - eiko
 - fliphat
+- hyoulove
 - hyousalt
+- hyousenpai
 - ladylaughs
 - moreroll
 - morerollbig
