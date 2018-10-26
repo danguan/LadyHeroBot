@@ -2,19 +2,19 @@ const roles = require('./roles.json');
 
 function handleRole(suffix, member, availableRoles) {
   return new Promise((res, rej) => {
-    if (roles['age'].hasOwnProperty(suffix)) {
-      handleAssignRole('age', suffix, member, availableRoles, res);
-    } else if (roles['gender'].hasOwnProperty(suffix)) {
-      handleAssignRole('gender', suffix, member, availableRoles, res);
-    } else if (roles['color'].hasOwnProperty(suffix)) {
-      handleAssignRole('color', suffix, member, availableRoles, res);
-    } else if (roles['job'].hasOwnProperty(suffix)) {
-      handleAssignRole('job', suffix, member, availableRoles, res);
-    } else if (suffix === 'help') {
+    if (suffix === 'help') {
       handleRoleHelp(res);
+    } else if (suffix.substring(0, 6) === 'remove') {
+      let removeType = suffix.substring(6);
+      handleRemoveRole(removeType, member, availableRoles, res, rej);
     } else {
-      rej();
+      for (const roleType in roles) {
+        if (roles[roleType].hasOwnProperty(suffix)) {
+          handleAssignRole(roleType, suffix, member, availableRoles, res);
+        }
+      }
     }
+    rej();
   });
 }
 
@@ -22,16 +22,30 @@ function handleAssignRole(type, suffix, member, availableRoles, res) {
   const typedRole = roles[type][suffix];
   const roleId = availableRoles.find('name', typedRole);
 
-  for (const role in roles[type]) {
-    const currRoleId = availableRoles.find('name', roles[type][role]).id;
-    if (member.roles.has(currRoleId)) {
-      member.removeRole(currRoleId);
-    }
-  }
+  handleRemoveRole(type, member, availableRoles);
 
   member.addRole(roleId);
 
   res(`Role ${typedRole} added to ${member.displayName}`);
+}
+
+function handleRemoveRole(type, member, availableRoles, res, rej) {
+  let removed = false;
+
+  for (const role in roles[type]) {
+    const currRoleId = availableRoles.find('name', roles[type][role]).id;
+    if (member.roles.has(currRoleId)) {
+      member.removeRole(currRoleId);
+      removed = true;
+    }
+  }
+
+  if (res && removed === true) {
+    let properType = type.replace(/\b\w/g, l => l.toUpperCase());
+    res(`${properType} role removed from ${member.displayName}`);
+  } else if (res && !removed) {
+    rej();
+  }
 }
 
 function handleRoleHelp(res) {
@@ -39,6 +53,9 @@ function handleRoleHelp(res) {
     'Role![role] or role![role]  →  Assigns the specified role to you (case insensitive)\n\n' +
     'Type Role!help to get a list of all available roles\n\n' +
     'Available roles:\n';
+  let removeMsg =
+    '\nRole!remove[role type] or role!remove[role type]  →  Removes the specified role type from you\n\n' +
+    'Available role types:\n';
 
   for (const roleType in roles) {
     let properRoleType = roleType.replace(/\b\w/g, l => l.toUpperCase());
@@ -48,14 +65,13 @@ function handleRoleHelp(res) {
       helpMsg += role + ', ';
     }
 
-    helpMsg = helpMsg.substring(0, helpMsg.length - 2)
-
-    helpMsg += '\n\n';
+    helpMsg = helpMsg.substring(0, helpMsg.length - 2) + '\n\n';
+    removeMsg += roleType + ', ';
   }
 
-  helpMsg = helpMsg.substring(0, helpMsg.length - 2);
+  removeMsg = removeMsg.substring(0, removeMsg.length - 2);
 
-  res(helpMsg);
+  res(helpMsg + removeMsg);
 }
 
 module.exports = {
