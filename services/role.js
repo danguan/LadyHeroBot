@@ -55,7 +55,7 @@ function handleRoleHelp(res) {
     'Available roles:\n';
   let removeMsg =
     '\nRole!remove[role type] or role!remove[role type]  →  Removes the specified role type from you\n\n' +
-    'Available role types:\n';
+    'Available removal commands:\n';
 
   for (const roleType in roles) {
     let properRoleType = roleType.replace(/\b\w/g, l => l.toUpperCase());
@@ -66,7 +66,7 @@ function handleRoleHelp(res) {
     }
 
     helpMsg = helpMsg.substring(0, helpMsg.length - 2) + '\n\n';
-    removeMsg += roleType + ', ';
+    removeMsg += 'role!remove' + roleType + ', ';
   }
 
   removeMsg = removeMsg.substring(0, removeMsg.length - 2);
