@@ -48,6 +48,8 @@ function handleRoleHelp(res) {
       helpMsg += role + ', ';
     }
 
+    helpMsg = helpMsg.substring(0, helpMsg.length - 2)
+
     helpMsg += '\n\n';
   }
 
