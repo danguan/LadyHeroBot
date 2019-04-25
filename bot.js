@@ -35,4 +35,8 @@ client.on('message', message => {
   }
 });
 
+client.on('error', err => {
+  console.error(err);
+});
+
 client.login(auth.token);
