@@ -20,7 +20,7 @@ function handleRole(suffix, member, availableRoles) {
 
 function handleAssignRole(type, suffix, member, availableRoles, res) {
   const typedRole = roles[type][suffix];
-  const roleId = availableRoles.find('name', typedRole);
+  const roleId = availableRoles.find(role => role.name === typedRole);
 
   handleRemoveRole(type, member, availableRoles);
 
@@ -33,7 +33,9 @@ function handleRemoveRole(type, member, availableRoles, res, rej) {
   let removed = false;
 
   for (const role in roles[type]) {
-    const currRoleId = availableRoles.find('name', roles[type][role]).id;
+    const currRoleId = availableRoles.find(
+      role => role.name === roles[type][role]
+    ).id;
     if (member.roles.has(currRoleId)) {
       member.removeRole(currRoleId);
       removed = true;
