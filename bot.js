@@ -28,7 +28,8 @@ client.on('message', message => {
         .then(roleMsg => {
           message.channel.send(roleMsg);
         })
-        .catch(() => {
+        .catch((err) => {
+          console.error(err);
           console.error('Invalid role specified');
         });
     }
