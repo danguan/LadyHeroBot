@@ -3,9 +3,32 @@
     "over18": "Over 18",
     "under18": "Under 18"
   },
-  "gender": {
+  "pronoun": {
     "he": "He/Him",
     "she": "She/Her",
     "they": "They/Them"
+  },
+  "color": {
+    "black": "black",
+    "red": "red",
+    "orange": "orange",
+    "yellow": "yellow",
+    "lime": "lime",
+    "turquoise": "turquoise",
+    "babyblue": "baby blue",
+    "skyblue": "sky blue",
+    "lilac": "lilac",
+    "purple": "purple",
+    "pink": "pink",
+    "rose": "rose",
+    "white": "white"
+  },
+  "job": {
+    "fighter": "Fighter",
+    "thief": "Thief",
+    "blackmage": "Black Mage",
+    "whitemage": "White Mage",
+    "redmage": "Red Mage",
+    "blackbelt": "Black Belt"
   }
 }

@@ -28,7 +28,9 @@ Available stickers:
 - cheesebig
 - eiko
 - fliphat
+- hyoulove
 - hyousalt
+- hyousenpai
 - ladylaughs
 - moreroll
 - morerollbig
@@ -42,6 +44,7 @@ Available stickers:
 - qtlaughs
 - rainbowplease
 - rainbowpleasebig
+- rainbro
 - ramzatoot
 - scream
 - sob
