@@ -4,53 +4,24 @@ Discord bot for Lady_Hero's Discord channel, used for testing Final Fantasy Brav
 
 Invite URL: https://discord.gg/ahVvx6r
 
-All resources belong to LadyHero - [Patreon](https://www.patreon.com/ladyhero) [Reddit](https://www.reddit.com/user/lady_hero) [Twitch](https://www.twitch.tv/ladyxhero)
+All resources belong to LadyHero - [Reddit](https://www.reddit.com/user/lady_hero) | [Twitch](https://www.twitch.tv/ladyxhero) | [RedBubble](https://www.redbubble.com/people/ladyhero?asc=u) | [Patreon](https://www.patreon.com/ladyhero)
 
-### Current Functionality
+---
 
-#### Stickers
+## Current Functionality
 
-Commands (All commands are case-insensitive):
+#### Commands (All commands are case-insensitive):
 
 - Sticker![sticker] or sticker![sticker] → Posts a sticker to the channel
-- sticker!help → Get a list of all available stickers
+- sticker!help → See usage of sticker! commands as well as a list of all available stickers
+- Role![role] or role![role] → Assigns the specified role to you
+- role!help → See usage of role! commands as well as a list of all available roles
+- role!remove[age|pronoun|color|job] → Removes specified role type from you
 
-Available stickers:
-
-- a2rage
-- angry
-- ayaka
-- bye
-- carry
-- carrybig
-- celeshey
-- cheese
-- cheesebig
-- eiko
-- fliphat
-- hyoulove
-- hyousalt
-- hyousenpai
-- ladylaughs
-- moreroll
-- morerollbig
-- noctis
-- noctisrush
-- noctisbig
-- noisesintensifies
-- nyxdice
-- ohohoho
-- oliveok
-- qtlaughs
-- rainbowplease
-- rainbowpleasebig
-- rainbro
-- ramzatoot
-- scream
-- sob
-
-Example Usage:
+#### Example Usage:
 
 - Sticker!NoisesIntensifies
 - sticker!carry
 - sticker!rainbowplease
+- role!fighter
+- role!removecolor
