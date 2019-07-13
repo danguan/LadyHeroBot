@@ -30,5 +30,8 @@
     "whitemage": "White Mage",
     "redmage": "Red Mage",
     "blackbelt": "Black Belt"
+  },
+  "stream": {
+    "stream": "Stream Notification Squad"
   }
 }
