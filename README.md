@@ -16,7 +16,7 @@ All resources belong to LadyHero - [Reddit](https://www.reddit.com/user/lady_her
 - sticker!help → See usage of sticker! commands as well as a list of all available stickers
 - Role![role] or role![role] → Assigns the specified role to you
 - role!help → See usage of role! commands as well as a list of all available roles
-- role!remove[age|pronoun|color|job] → Removes specified role type from you
+- role!remove[age|pronoun|color|job|stream] → Removes specified role type from you
 
 #### Example Usage:
 
