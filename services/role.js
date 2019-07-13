@@ -18,43 +18,6 @@ function handleRole(suffix, member, availableRoles) {
   });
 }
 
-function handleAssignRole(type, suffix, member, availableRoles, res) {
-  const typedRole = roles[type][suffix];
-  const roleId = availableRoles.find(availableRole => {
-    return typedRole === availableRole.name;
-  }).id;
-
-  if (!member.roles.has(roleId)) {
-    handleRemoveRole(type, member, availableRoles);
-
-    member.addRole(roleId);
-
-    res(`Role ${typedRole} added to ${member.displayName}`);
-  }
-}
-
-function handleRemoveRole(type, member, availableRoles, res, rej) {
-  let removed = false;
-
-  for (const role in roles[type]) {
-    const currRoleId = availableRoles.find(availableRole => {
-      return roles[type][role] === availableRole.name;
-    }).id;
-
-    if (currRoleId && member.roles.has(currRoleId)) {
-      member.removeRole(currRoleId);
-      removed = true;
-    }
-  }
-
-  if (res && removed === true) {
-    let properType = type.replace(/\b\w/g, l => l.toUpperCase());
-    res(`${properType} role removed from ${member.displayName}`);
-  } else if (res && !removed) {
-    rej();
-  }
-}
-
 function handleRoleHelp(res) {
   let helpMsg =
     'Role![role] or role![role]  →  Assigns the specified role to you (case insensitive)\n\n' +
@@ -79,6 +42,43 @@ function handleRoleHelp(res) {
   removeMsg = removeMsg.substring(0, removeMsg.length - 2);
 
   res(helpMsg + removeMsg);
+}
+
+function handleRemoveRole(type, member, availableRoles, res, rej) {
+  let removed = false;
+
+  for (const role in roles[type]) {
+    const currRoleId = availableRoles.find(availableRole => {
+      return roles[type][role] === availableRole.name;
+    }).id;
+
+    if (currRoleId && member.roles.has(currRoleId)) {
+      member.removeRole(currRoleId);
+      removed = true;
+    }
+  }
+
+  if (res && removed === true) {
+    let properType = type.replace(/\b\w/g, l => l.toUpperCase());
+    res(`${properType} role removed from ${member.displayName}`);
+  } else if (res && !removed) {
+    rej();
+  }
+}
+
+function handleAssignRole(type, suffix, member, availableRoles, res) {
+  const typedRole = roles[type][suffix];
+  const roleId = availableRoles.find(availableRole => {
+    return typedRole === availableRole.name;
+  }).id;
+
+  if (!member.roles.has(roleId)) {
+    handleRemoveRole(type, member, availableRoles);
+
+    member.addRole(roleId);
+
+    res(`Role ${typedRole} added to ${member.displayName}`);
+  }
 }
 
 module.exports = {
