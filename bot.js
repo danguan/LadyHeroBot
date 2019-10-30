@@ -3,9 +3,11 @@ const client = new Discord.Client();
 const auth = require('./auth.json');
 const { handleSticker } = require('./services/sticker.js');
 const { handleRole } = require('./services/role.js');
+const { initDb } = require('./src/database/db.js');
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
+  initDb("quests");
 });
 
 client.on('message', message => {
