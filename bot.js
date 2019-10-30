@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const auth = require('./auth.json');
-const { handleSticker } = require('./services/sticker.js');
-const { handleRole } = require('./services/role.js');
+const { handleSticker } = require('./src/services/sticker.js');
+const { handleRole } = require('./src/services/role.js');
 const { initDb } = require('./src/database/db.js');
 
 client.on('ready', () => {

@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const images = require('../assets/images.json');
+const images = require('../../assets/images.json');
 
 function handleSticker(suffix) {
   // allow alternate spellings of hyou/hyoh
