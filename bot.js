@@ -29,13 +29,12 @@ client.login(auth.token);
 function handleDmMessage(message) {
   if (!message.author.equals(client.user)) {
     const msg = message.content;
-    const prefix = msg.substring(0, msg.indexOf(' ')).toLowerCase();
-    const suffix = msg.substring(msg.indexOf(' ') + 1).toLowerCase();
 
     logTo('dm.log', msg, message.author.username);
 
-    if (prefix === '!2019') {
-      handleTreat(suffix)
+    if (msg.toLowerCase().startsWith('!2019 treat')) {
+      const suffix = msg.split('!2019 treat')[1].toLowerCase();
+      handleTreat(suffix, message.author.id)
         .then(treatMsg => {
           message.channel.send(treatMsg);
         })
@@ -43,8 +42,9 @@ function handleDmMessage(message) {
           console.error(err);
           console.error('Invalid treat specified');
         });
-    } else if (prefix === '!answer') {
-      handleAnswer(suffix)
+    } else if (msg.toLowerCase().startsWith('!answer')) {
+      const suffix = msg.split('!answer')[1].toLowerCase();
+      handleAnswer(suffix, message.author.id)
         .then(answerMsg => {
           message.channel.send(answerMsg);
         })
