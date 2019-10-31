@@ -42,8 +42,18 @@ function initDb() {
 
     console.log(`Table ${tableName} has been initialized`);
   }
-};
+}
+
+function getInfo(userId) {
+  const stmt = db.prepare(`SELECT * 
+    FROM ${tableName} 
+    WHERE userId = ?`);
+
+  return stmt;
+}
+
 
 module.exports = {
-  initDb
+  initDb,
+  getInfo,
 };
