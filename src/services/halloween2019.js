@@ -74,24 +74,6 @@ function handleAnswer(suffix, userId) {
       treatsAnswers['answers'][currentTreat][currentTreatStep];
 
     if (currUserRow[currentTreat] === TREAT_FINISHED) {
-      //   const currUserScore = [
-      //     ['treat1 : FFBE', currUserRow['treat1']],
-      //     ['treat2 : FFBE EQUIP (easy)', currUserRow['treat2']],
-      //     ['treat3 : Final Fantasy Mascots', currUserRow['treat3']],
-      //     ['treat4 : Lightning and Me', currUserRow['treat4']],
-      //     [
-      //       'treat5 : Bench Universe Discord Server (very easy)',
-      //       currUserRow['treat5']
-      //     ]
-      //   ]
-      //     .filter(treatStatus => treatStatus[1] < TREAT_FINISHED)
-      //     .map(treat => `!2019 ${treat[0]}`);
-
-      //   res(
-      //     `You've already finished this treat. Choose a different treat:\n${currUserScore.join(
-      //       '\n'
-      //     )}`
-      // );
       rej(`Already done with treat, cannot answer again`);
     } else if (currAnswers.includes(suffix)) {
       updateTreatStep(currentTreat).run({
