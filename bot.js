@@ -4,6 +4,7 @@ const auth = require('./auth.json');
 const { handleSticker } = require('./src/services/sticker.js');
 const { handleRole } = require('./src/services/role.js');
 const { initDb } = require('./src/database/db.js');
+const { logTo } = require('./src/services/log.js');
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);

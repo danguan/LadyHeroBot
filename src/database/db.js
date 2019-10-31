@@ -1,19 +1,12 @@
 const Database = require('better-sqlite3');
-const moment = require('moment');
-const fs = require('fs');
+const { logTo } = require('../services/log.js');
 
 const db = new Database('localDb.db', {
   verbose: sqlStr => {
-    let outStr = `${moment().format('MM-DD-YY HH:mm:ss')}\n ${sqlStr}\n`;
-
-    console.log(outStr);
-    fs.appendFile('localDb.log', outStr, err => {
-      if (err) {
-        console.error(`Error: ${err}`);
+    console.log(`${sqlStr}\n`);
+    logTo('localDb.log', sqlStr);
       }
     });
-  }
-});
 
 const initDb = tableName => {
   const initDbRowQuery = `SELECT count(*)
