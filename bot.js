@@ -11,6 +11,52 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+  if (message.channel.type === 'dm') {
+    handleDmMessage(message);
+  } else if (message.channel.type === 'text') {
+    handleTextMessage(message);
+  }
+});
+
+client.on('error', err => {
+  console.error(err);
+});
+
+client.login(auth.token);
+
+// Current DM message format: "!prefix suffix"
+function handleDmMessage(message) {
+  if (!message.author.equals(client.user)) {
+    const msg = message.content;
+    const prefix = msg.substring(0, msg.indexOf(' ')).toLowerCase();
+    const suffix = msg.substring(msg.indexOf(' ') + 1).toLowerCase();
+
+    logTo('dm.log', msg, message.author.username);
+
+    if (prefix === '!2019') {
+      handleTreat(suffix)
+        .then(treatMsg => {
+          message.channel.send(treatMsg);
+        })
+        .catch(err => {
+          console.error(err);
+          console.error('Invalid treat specified');
+        });
+    } else if (prefix === '!answer') {
+      handleAnswer(suffix)
+        .then(answerMsg => {
+          message.channel.send(answerMsg);
+        })
+        .catch(err => {
+          console.error(err);
+          console.error('Invalid role specified');
+        });
+    }
+  }
+}
+
+// Current Text message format: "prefix!suffix"
+function handleTextMessage(message) {
   if (!message.author.equals(client.user)) {
     const msg = message.content;
     const member = message.member;
@@ -22,7 +68,8 @@ client.on('message', message => {
         .then(stickerMsg => {
           message.channel.send(stickerMsg);
         })
-        .catch(() => {
+        .catch(err => {
+          console.error(err);
           console.error('Invalid sticker specified');
         });
     } else if (prefix === 'role') {
@@ -36,10 +83,4 @@ client.on('message', message => {
         });
     }
   }
-});
-
-client.on('error', err => {
-  console.error(err);
-});
-
-client.login(auth.token);
+}
