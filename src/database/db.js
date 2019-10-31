@@ -7,8 +7,8 @@ const db = new Database('localDb.db', {
   verbose: sqlStr => {
     console.log(`${sqlStr}\n`);
     logTo('localDb.log', sqlStr);
-      }
-    });
+  }
+});
 
 function initDb() {
   const initDbRowQuery = `SELECT count(*)
@@ -24,7 +24,6 @@ function initDb() {
   if (!table['count(*)']) {
     const schemaQuery = `CREATE TABLE ${tableName} (
       userId TEXT PRIMARY KEY NOT NULL,
-      userName TEXT NOT NULL,
       currentTreat INTEGER DEFAULT 0,
       treat1 INTEGER DEFAULT 0,
       treat2 INTEGER DEFAULT 0,
@@ -44,16 +43,38 @@ function initDb() {
   }
 }
 
-function getInfo(userId) {
+function getInfo() {
   const stmt = db.prepare(`SELECT * 
     FROM ${tableName} 
-    WHERE userId = ?`);
+    WHERE userId = @userId`);
 
   return stmt;
 }
 
+function createInfo() {
+  const stmt = db.prepare(`INSERT INTO ${tableName} (userId)
+    VALUES (@userId)`);
+  return stmt;
+}
+
+function updateCurrentTreat() {
+  const stmt = db.prepare(`UPDATE ${tableName}
+    SET currentTreat = @currentTreat
+    WHERE userId = @userId`);
+  return stmt;
+}
+
+function updateTreatStep(treatNumStr) {
+  const stmt = db.prepare(`UPDATE ${tableName}
+    SET ${treatNumStr} = @stepValue
+    WHERE userId = @userId`);
+  return stmt;
+}
 
 module.exports = {
   initDb,
   getInfo,
+  createInfo,
+  updateCurrentTreat,
+  updateTreatStep
 };
