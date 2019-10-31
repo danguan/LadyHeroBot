@@ -8,7 +8,7 @@ const { logTo } = require('./src/services/log.js');
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  initDb("quests");
+  initDb();
 });
 
 client.on('message', message => {

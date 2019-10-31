@@ -1,6 +1,8 @@
 const Database = require('better-sqlite3');
 const { logTo } = require('../services/log.js');
 
+const tableName = 'treats';
+
 const db = new Database('localDb.db', {
   verbose: sqlStr => {
     console.log(`${sqlStr}\n`);
@@ -8,7 +10,7 @@ const db = new Database('localDb.db', {
       }
     });
 
-const initDb = tableName => {
+function initDb() {
   const initDbRowQuery = `SELECT count(*)
   FROM sqlite_master
   WHERE type='table'
@@ -23,16 +25,12 @@ const initDb = tableName => {
     const schemaQuery = `CREATE TABLE ${tableName} (
       userId TEXT PRIMARY KEY NOT NULL,
       userName TEXT NOT NULL,
-      quest1 INTEGER DEFAULT 0,
-      quest2 INTEGER DEFAULT 0,
-      quest3 INTEGER DEFAULT 0,
-      quest4 INTEGER DEFAULT 0,
-      quest5 INTEGER DEFAULT 0,
-      quest6 INTEGER DEFAULT 0,
-      quest7 INTEGER DEFAULT 0,
-      quest8 INTEGER DEFAULT 0,
-      quest9 INTEGER DEFAULT 0,
-      quest10 INTEGER DEFAULT 0)`;
+      currentTreat INTEGER DEFAULT 0,
+      treat1 INTEGER DEFAULT 0,
+      treat2 INTEGER DEFAULT 0,
+      treat3 INTEGER DEFAULT 0,
+      treat4 INTEGER DEFAULT 0,
+      treat5 INTEGER DEFAULT 0)`;
 
     const indexQuery = `CREATE UNIQUE INDEX userIdIdx 
     ON ${tableName} (userId)
