@@ -10,19 +10,18 @@ const TREAT_FINISHED = 3;
 const TOTAL_TREATS = 5;
 
 function handleTreat(suffix, userId) {
-  const currTreat = 'treat' + suffix;
-
-  if (!(currTreat in treatsAnswers['treats'])) {
-    rej('Invalid treat specified');
-  }
-
-  const currUserRow = getInfo().get({ userId });
-
-  if (!currUserRow) {
-    return handleInactive();
-  }
-
   return new Promise((res, rej) => {
+    const currTreat = 'treat' + suffix;
+  
+    if (!(currTreat in treatsAnswers['treats'])) {
+      rej('Invalid treat specified');
+    }
+  
+    const currUserRow = getInfo().get({ userId });
+  
+    if (!currUserRow) {
+      return handleInactive();
+    }
     if (currUserRow[currTreat] === TREAT_FINISHED) {
       const currUserScore = [
         ['treat1 : FFBE', currUserRow['treat1']],
@@ -57,17 +56,16 @@ function handleTreat(suffix, userId) {
 }
 
 function handleAnswer(suffix, userId) {
-  const currUserRow = getInfo().get({ userId });
-
-  if (!currUserRow) {
-    return handleInactive();
-  }
-
-  if (currUserRow['currentTreat'] === 0) {
-    res(`Pick a treat first.`);
-  }
-
   return new Promise((res, rej) => {
+    const currUserRow = getInfo().get({ userId });
+
+    if (!currUserRow) {
+      return handleInactive();
+    }
+  
+    if (currUserRow['currentTreat'] === 0) {
+      res(`Pick a treat first.`);
+    }
     const currentTreat = 'treat' + parseInt(currUserRow['currentTreat']);
     const currentTreatStep = parseInt(currUserRow[currentTreat]);
     const currAnswers =
@@ -143,11 +141,11 @@ function handleFinished(userId) {
   return new Promise((res, rej) => {
     if (done === TOTAL_TREATS) {
       res(
-        `I don’t know why you bothered but yay.. You did it. Woopie. Congratulations. Do I need to say more? Go ask Lady for your pat on the back.`
+        `I don’t know why you bothered but yay.. You did it. Woopie. Congratulations. Do I need to say more? Go DM Lady the secret password **"Trick and Trick I finished your pick. Treat and Treat oh it'll be sweet."** for your pat on the back. You can help others in the event chat but do try to keep the password to yourself or Lady will have to check the records.`
       );
-    } else if (done === 1) {
+    } else if (currUserRow[currTreat] === TREAT_FINISHED && done === 1) {
       res(
-        `Well, you managed to get a treat. Thank you for participating. Go ask Lady for your trick-or-treater role.`
+        `Well, you managed to get a treat. Thank you for participating. Go DM Lady the secret password, **"I finished the trick now give me the treat"** for your trick-or-treater role.`
       );
     } else if (currUserRow[currTreat] === TREAT_FINISHED) {
       res();
