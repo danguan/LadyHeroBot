@@ -26,7 +26,7 @@ function handleSticker(suffix) {
 
       res(helpMsg);
     } else {
-      rej();
+      rej(`Invalid sticker suffix ${suffix} provided`);
     }
   });
 }

@@ -10,11 +10,10 @@ function handleRole(suffix, member, availableRoles) {
     } else {
       for (const roleType in roles) {
         if (roles[roleType].hasOwnProperty(suffix)) {
-          handleAssignRole(roleType, suffix, member, availableRoles, res);
+          handleAssignRole(roleType, suffix, member, availableRoles, res, rej);
         }
       }
     }
-    rej();
   });
 }
 
@@ -62,11 +61,11 @@ function handleRemoveRole(type, member, availableRoles, res, rej) {
     let properType = type.replace(/\b\w/g, l => l.toUpperCase());
     res(`${properType} role removed from ${member.displayName}`);
   } else if (res && !removed) {
-    rej();
+    rej(`No roles of type ${type} present on member ${member.displayName}`);
   }
 }
 
-function handleAssignRole(type, suffix, member, availableRoles, res) {
+function handleAssignRole(type, suffix, member, availableRoles, res, rej) {
   const typedRole = roles[type][suffix];
   const roleId = availableRoles.find(availableRole => {
     return typedRole === availableRole.name;
@@ -78,6 +77,8 @@ function handleAssignRole(type, suffix, member, availableRoles, res) {
     member.addRole(roleId);
 
     res(`Role ${typedRole} added to ${member.displayName}`);
+  } else {
+    rej(`${member.displayName} already has the role ${typedRole}`);
   }
 }
 

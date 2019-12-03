@@ -99,7 +99,6 @@ function handleTextMessage(message) {
         })
         .catch(err => {
           console.error(err);
-          console.error('Invalid sticker specified');
         });
     } else if (prefix === 'role') {
       handleRole(suffix, member, message.guild.roles)
@@ -108,7 +107,6 @@ function handleTextMessage(message) {
         })
         .catch(err => {
           console.error(err);
-          console.error('Invalid role specified');
         });
     } else if (msg === '!halloween2019') {
       handleIntro(message.author.id)
