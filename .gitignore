@@ -3,3 +3,9 @@ auth.json
 
 # node_modules
 node_modules
+
+# db
+*.db
+
+# Log files
+*.log

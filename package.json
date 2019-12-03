@@ -1,11 +1,14 @@
 {
-    "name": "ladyherobot",
-    "version": "1.0.0",
-    "description": "Discord Bot for Lady_Hero",
-    "main": "bot.js",
-    "author": "StrykeBack",
-    "dependencies": {
-        "discord.js": "^11.4.2",
-        "winston": "^2.4.0"
-    }
+  "name": "ladyherobot",
+  "version": "1.0.0",
+  "description": "Discord Bot for Lady_Hero",
+  "main": "bot.js",
+  "author": "StrykeBack",
+  "dependencies": {
+    "better-sqlite3": "^5.4.3",
+    "discord.js": "^11.4.2",
+    "fs": "0.0.1-security",
+    "moment": "^2.24.0",
+    "winston": "^2.4.0"
+  }
 }
