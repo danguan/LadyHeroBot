@@ -25,3 +25,20 @@ All resources belong to LadyHero - [Reddit](https://www.reddit.com/user/lady_her
 - sticker!rainbowplease
 - role!fighter
 - role!removecolor
+
+---
+
+## Development Instructions
+
+Pre-requisite: node.js and npm must be installed
+
+1. Create auth.json file in root dir containing Discord bot token with the format:
+```
+{
+    "token": "<TOKEN-HERE>"
+}
+```
+2. Run `npm install`
+3. Run `node bot.js` to start bot
+
+Optional: Install [pm2](https://pm2.keymetrics.io/) to manage bot.js process, i.e. `pm2 start bot.js`
